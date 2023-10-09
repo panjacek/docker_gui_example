@@ -1,0 +1,12 @@
+services:
+  xeyes:
+    image: xeyes
+    build: .
+    tty: true
+    environment:
+      - DISPLAY
+      #- XSOCK
+      - XAUTHORITY=${XAUTH}
+    volumes:
+      - "${XAUTH}:${XAUTH}:ro"
+      - "${XSOCK}:${XSOCK}:ro"
